@@ -348,11 +348,11 @@ namespace Whush.Demo
                 {
                     foreach (Data d in myData)
                     {
-                        sw.WriteLine("\t\t{0}", d.Name.ToUpper());
-                        sw.WriteLine("Логин : {0}", d.Log);
-                        sw.WriteLine("Пароль : {0}", d.Pas);
-                        sw.WriteLine("Ссылка на ресурс : {0}", d.HLink);
-                        sw.WriteLine("Комментарий : {0}", d.Com);
+                        sw.WriteLine("\t\t{0}", d.Name.ToUpper().ToString());
+                        sw.WriteLine("Логин : {0}", d.Log.ToString());
+                        sw.WriteLine("Пароль : {0}", d.Pas.ToString());
+                        sw.WriteLine("Ссылка на ресурс : {0}", d.HLink.ToString());
+                        sw.WriteLine("Комментарий : {0}", d.Com.ToString());
                         sw.WriteLine();
                         sw.WriteLine();
                     }

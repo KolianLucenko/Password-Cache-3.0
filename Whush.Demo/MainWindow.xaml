@@ -16,7 +16,17 @@
                         <Image Source="Resource/Open_file.ico" Width="20" Height="22"/>
                     </MenuItem.Icon>
                 </MenuItem>
-
+                <Separator>
+                    <Separator.Template>
+                        <ControlTemplate>
+                            <Border BorderThickness="1" Width="128" Background="#FF6CA6E0" BorderBrush="Black" CornerRadius="4">
+                                <TextBlock Foreground="White" Margin="3" HorizontalAlignment="Center">
+                                    Сохранение паролей
+                                </TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Separator.Template>
+                </Separator>
                 <MenuItem Header="Сохранить как..." Click="MenuItem_Click">
                     <MenuItem.Icon>
                         <Image Source="Resource/save-512.ico" Width="22" Height="22"/>
@@ -32,7 +42,17 @@
                         <Image Source="Resource/txt.ico" Width="22" Height="22"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <Separator/>
+                <Separator>
+                    <Separator.Template>
+                        <ControlTemplate>
+                            <Border BorderThickness="1" Width="128" Background="#FF6CA6E0" BorderBrush="Black" CornerRadius="4">
+                                <TextBlock Foreground="White" Margin="3" HorizontalAlignment="Center">
+                                    Выход
+                                </TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Separator.Template>
+                </Separator>
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1">
                     <MenuItem.Icon>
                         <Image Source="Resource/Open_door.ico" Width="20" Height="20"/>
@@ -121,7 +141,7 @@
                                                 <TextBox x:Name="Search" Width="150" Margin="10,0,0,0"/>
                                                 <Button x:Name="SearchButton" Width="120" Margin="10,0,0,0" Content="Поиск" Click="GoSearch"/>
                                             </StackPanel>
-                                            <DataGrid x:Name="TableView" BorderBrush="Transparent" ColumnWidth="Auto" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="LightBlue" AlternationCount="2">
+                                            <DataGrid Height="152" x:Name="TableView" BorderBrush="Transparent" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="True" AlternatingRowBackground="LightBlue" AlternationCount="2">
                                                 <DataGrid.CellStyle>
                                                     <Style TargetType="DataGridCell">
                                                         <Style.Triggers>
