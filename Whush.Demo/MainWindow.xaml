@@ -173,16 +173,16 @@
                                 <TextBox x:Name="Name" Grid.Row="1" Grid.Column="0" MaxLength="20"/>
 
                                 <Label Content="Логин" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="Login" Grid.Row="1" Grid.Column="1" MaxLength="20"/>
+                                <TextBox x:Name="Login" Grid.Row="1" Grid.Column="1" MaxLength="30"/>
 
                                 <Label Content="Пароль" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="Password" Grid.Row="1" Grid.Column="2" MaxLength="20"/>
+                                <TextBox x:Name="Password" Grid.Row="1" Grid.Column="2" MaxLength="30"/>
 
                                 <Label Content="Комментарий" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="Comment" Grid.Row="1" Grid.Column="3" MaxLength="70"/>
+                                <TextBox x:Name="Comment" Grid.Row="1" Grid.Column="3" MaxLength="100"/>
 
                                 <Label Content="Введите адресс(URL)" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="Url" Grid.Row="1" Grid.Column="4" MaxLength="40"/>
+                                <TextBox x:Name="Url" Grid.Row="1" Grid.Column="4" MaxLength="70"/>
                             </Grid>
                             <Button x:Name="Add" Content="Добавить" Width="120" Margin="0,7" Click="AddPass"/>
                         </StackPanel>
