@@ -70,9 +70,9 @@
                                         <Label Content="Использовать регистр" Grid.Column="0" Grid.Row="2"/>
                                         <CheckBox x:Name="isCase" Margin="0,5" Grid.Column="1" Grid.Row="2"/>
                                         <Label Content="На основе слова" Grid.Column="0" Grid.Row="3" IsEnabled="False"/>
-                                        <CheckBox Margin="0,5" Click="CheckBox_Click" IsEnabled="False" Grid.Column="1" Grid.Row="3"/>
+                                        <CheckBox x:Name="WordCheckbox" Margin="0,5" Click="CheckBox_Click" Grid.Column="1" Grid.Row="3"/>
                                     </Grid>
-                                    <TextBox x:Name="World" Margin="5,5" IsEnabled="False"/>
+                                    <TextBox x:Name="World" Margin="5,5" Visibility="Collapsed"/>
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                         <Button Content="Генерация пароля" Click="Button_Click"/>
                                     </StackPanel>

@@ -96,7 +96,7 @@ namespace Whush.Demo
         /// <param name="Numb"></param>
         /// <param name="Cas"></param>
         /// <returns></returns>
-        private string GeneretionPassword(int Count, bool Numb, bool Cas)
+        private string GeneretionPassword(int Count, bool Numb, bool Cas,bool wordCheckbox)
         {
             string result = string.Empty;
             Random r = new Random();
@@ -108,7 +108,8 @@ namespace Whush.Demo
 
             if (Cas)
                 cc = r.Next(1, r.Next(2, Count));
-
+            if (wordCheckbox)
+                Count = Count - World.Text.Length;
 
             for (; result.Length < Count; )
             {
@@ -130,6 +131,10 @@ namespace Whush.Demo
                     }
                 }
             }
+
+            if (wordCheckbox)
+                result = World.Text + result;
+
             return result;
         }
 
@@ -145,9 +150,11 @@ namespace Whush.Demo
                 int c;
                 if (!Int32.TryParse(Count.Text, out c))
                     throw new Exception("Количество символов должно быть числом!");
+                if ((bool)WordCheckbox.IsChecked && c < World.Text.Length)
+                    throw new Exception("Размер пароля не может быть меньше строки на основе какой создаётся пароль!");
 
                 ResultPass.Visibility = System.Windows.Visibility.Visible;
-                ResultPass.Text = GeneretionPassword(c, (bool)Numb.IsChecked, (bool)isCase.IsChecked);
+                ResultPass.Text = GeneretionPassword(c, (bool)Numb.IsChecked, (bool)isCase.IsChecked,(bool)WordCheckbox.IsChecked);
             }
             catch (Exception ex)
             {
