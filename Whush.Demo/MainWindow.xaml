@@ -27,6 +27,11 @@
                         <Image Source="Resource/save-512.ico" Width="22" Height="22"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem Header="Сохранить в .txt" Click="MenuItem_Click_4">
+                    <MenuItem.Icon>
+                        <Image Source="Resource/txt.ico" Width="22" Height="22"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
                 <MenuItem Header="Выйти" Click="MenuItem_Click_1">
                     <MenuItem.Icon>

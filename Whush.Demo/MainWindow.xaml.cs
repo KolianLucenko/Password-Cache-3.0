@@ -286,6 +286,11 @@ namespace Whush.Demo
             }
         }
 
+        /// <summary>
+        /// Статус бар наведение мыши
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GroupBox_MouseEnter(object sender, MouseEventArgs e)
         {
             if ((sender as GroupBox) != null)
@@ -294,19 +299,58 @@ namespace Whush.Demo
                 StatBar.Content = string.Format("{0} , всего записей - {1}", (sender as TabItem).Tag.ToString(), myData.Count);
         }
 
+
+        /// <summary>
+        /// Статус бар
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GroupBox_MouseLeave(object sender, MouseEventArgs e)
         {
             StatBar.Content = string.Format("Ожидание... , всего записей - {0}", myData.Count);
         }
 
+        /// <summary>
+        /// Кнопка выхода из программы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void win_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             CreateDT(FName);
         }
 
+        /// <summary>
+        /// Сохранить файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
-            OpenDB(FName);
+            SaveDB();
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog Sdlg = new SaveFileDialog();
+            Sdlg.Filter = "Text file (.txt)|*.txt";
+            if (Sdlg.ShowDialog() == true)
+            {
+                FName = Sdlg.FileName;
+                using (StreamWriter sw = File.CreateText(FName))
+                {
+                    foreach (Data d in myData)
+                    {
+                        sw.WriteLine("\t\t{0}", d.Name.ToUpper());
+                        sw.WriteLine("Логин : {0}", d.Log);
+                        sw.WriteLine("Пароль : {0}", d.Pas);
+                        sw.WriteLine("Ссылка на ресурс : {0}", d.HLink);
+                        sw.WriteLine("Комментарий : {0}", d.Com);
+                        sw.WriteLine();
+                        sw.WriteLine();
+                    }
+                }
+            }
         }
     }
 }
